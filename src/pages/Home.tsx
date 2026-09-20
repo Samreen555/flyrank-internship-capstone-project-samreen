@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ ADD THIS
+import { useNavigate } from 'react-router-dom'; 
 import { SearchBar } from '../components/search/SearchBar';
 import { MovieGrid } from '../components/movie/MovieGrid';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
@@ -12,7 +12,7 @@ import { DEFAULT_HOME_QUERY } from '../utils/constants';
 import { AIRecommendations } from '../components/ai/AIRecommendations';
 
 export const Home: React.FC = () => {
-  const navigate = useNavigate(); // ✅ ADD THIS
+  const navigate = useNavigate(); 
   const {
     movies,
     loading,
@@ -118,7 +118,7 @@ export const Home: React.FC = () => {
           <section className="max-w-4xl mx-auto">
             <AIRecommendations 
               onMovieSelect={(imdbId) => navigate(`/movie/${imdbId}`)}
-              onAddToFavorites={handleFavoriteToggle}
+              
             />
           </section>
         </>

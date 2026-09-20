@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  
+  "homepage": "https://Samreen555.github.io/flyrank-internship-capstone-project-samreen",
+  
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -11,7 +14,9 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "lint": "oxlint src/**/*.tsx src/**/*.ts",
-    "lint:fix": "oxlint src/**/*.tsx src/**/*.ts --fix"
+    "lint:fix": "oxlint src/**/*.tsx src/**/*.ts --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",

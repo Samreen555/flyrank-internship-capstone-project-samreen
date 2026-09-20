@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Sparkles, Loader2, Film, X, Star, ThumbsUp } from 'lucide-react';
+import { Sparkles, Loader2, Film, X, ThumbsUp } from 'lucide-react';
 import { getAIRecommendations, getFallbackRecommendations } from '../../api/claude';
-import type { Movie } from '../../types/movie';
 import { useNavigate } from 'react-router-dom';
 
 interface AIRecommendationsProps {
-  onAddToFavorites?: (movie: Movie) => void;
   onMovieSelect?: (imdbId: string) => void;
 }
 
@@ -17,7 +15,6 @@ interface Recommendation {
 }
 
 export const AIRecommendations: React.FC<AIRecommendationsProps> = ({
-  onAddToFavorites,
   onMovieSelect,
 }) => {
   const [mood, setMood] = useState('');
@@ -30,7 +27,7 @@ export const AIRecommendations: React.FC<AIRecommendationsProps> = ({
 
   const handleGetRecommendations = async () => {
     if (!mood.trim()) {
-      setError('Please describe what you\'re in the mood for');
+      setError("Please describe what you're in the mood for");
       return;
     }
 
